@@ -19,7 +19,7 @@
         "name": "vm_ip",
         "label": "Public IP Address",
         "type": "string",
-        "default": "",
+        "default": "${vm_info.vm_ip}",
         "description": "Infrastructure Node Public IP Address. This IP address must have a mapping to the OCP cluster app URL in your DNS or in your local etc hosts file.",
         "required": false,
         "secured": false,
@@ -31,7 +31,7 @@
         "name": "vm_hostname",
         "label": "VM Hostname",
         "type": "string",
-        "default": "",
+        "default": "${vm_info.vm_hostname}",
         "description": "VM Hostname.",
         "required": false,
         "secured": false,
@@ -48,7 +48,7 @@
         "secured": false,
         "hidden": false,
         "immutable": false,
-        "default": "",
+        "default": "${vm_info.vm_ipv4_gateway}",
         "group_name": "vm_info"
       },
       {
@@ -60,7 +60,7 @@
         "secured": false,
         "hidden": false,
         "immutable": false,
-        "default": "",
+        "default": "${vm_info.vm_ipv4_prefix_length}",
         "regex": "^([8-9]|[1-2][0-9]|3[0-2])$",
         "regexdesc": "Provide an integer value between 1 and 32",
         "group_name": "vm_info"
@@ -74,12 +74,12 @@
         "secured": false,
         "hidden": false,
         "immutable": false,
-        "default": "",
+        "default": "${vm_info.vm_template}",
         "group_name": "vm_info"
       },
       {
         "name": "vm_network_adapter_type",
-        "default":"",
+        "default":"${vm_info.vm_network_adapter_type}",
         "description": "Network adapter type for VM",
         "type": "string",
         "required": false,
@@ -92,7 +92,7 @@
       {
         "name": "vsphere_network",
         "label": "Network name for VM",
-        "default":"",
+        "default":"${vm_info.vsphere_network}",
         "type": "string",
         "description": "Private vSphere Network name for infrastructure and OCP cluster VM.",
         "required": false,
@@ -103,7 +103,7 @@
       },
       {
         "name": "vsphere_datastore",
-        "default":"",
+        "default":"${vm_info.vsphere_datastore}",
         "description": "Virtual machine datastore name",
         "type": "string",
         "required": false,
@@ -122,7 +122,7 @@
         "secured": false,
         "hidden": false,
         "immutable": false,
-        "default": "",
+        "default": "${vm_info.vm_clone_timeout}",
         "group_name": "vm_info"
       },
       {
@@ -134,7 +134,7 @@
         "secured": false,
         "hidden": false,
         "immutable": false,
-        "default": "",
+        "default": "${vm_info.vm_dns_servers}",
         "group_name": "vm_info"
       },
       {
@@ -146,12 +146,12 @@
         "secured": false,
         "hidden": false,
         "immutable": false,
-        "default": "",
+        "default": "${vm_info.vm_dns_suffixes}",
         "group_name": "vm_info"
       },
       {
         "name": "vm_domain_name",
-        "default":"",
+        "default":"${vm_info.vm_domain_name}",
         "description": "Virtual machine domain name.",
         "type": "string",
         "required": false,
@@ -163,7 +163,7 @@
       },
       {
         "name": "vm_folder",
-        "default":"",
+        "default":"${vm_info.vm_folder}",
         "description": "vSphere folder name to create the infrastructure virtual vachine.",
         "type": "string",
         "required": false,
@@ -175,7 +175,7 @@
       },
       {
         "name": "vsphere_datacenter",
-        "default":"",
+        "default":"${vm_info.vsphere_datacenter}",
         "description": "The name of a datacenter in which to create the virtual machine and other assets.",
         "type": "string",
         "required": false,
@@ -187,7 +187,7 @@
       },
       {
         "name": "vsphere_resource_pool",
-        "default":"",
+        "default":"${vm_info.vsphere_resource_pool}",
         "description": "Name of the default resource pool for the cluster. Must be specified as 'cluster_name/resource_pool'",
         "type": "string",
         "required": false,
